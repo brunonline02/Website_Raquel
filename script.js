@@ -1,6 +1,7 @@
-function openModal() {
+window.openModal = function () {
   document.body.style.overflow = "hidden";
-}
-function closeModal() {
+};
+
+window.closeModal = function () {
   document.body.style.overflow = "auto";
-}
+};
