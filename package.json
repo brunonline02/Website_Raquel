@@ -8,6 +8,7 @@
     "postcss": "^8.4.21",
     "vite": "^4.1.4"
   },
+  "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
