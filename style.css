@@ -11,3 +11,17 @@ body {
   line-height: 1.5;
   background-color: #fffcf6;
 }
+
+.photo {
+  background-image: url("/avatar.jpeg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 410px) {
+  .menu > :where(li) > :where(ul) {
+    position: static;
+  }
+}

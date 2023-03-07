@@ -92,10 +92,8 @@
       <div class="lg:flex lg:mx-32">
         <div class="avatar flex justify-center items-center">
           <div
-            class="2xs:w-[300px] md:w-[400px] lg:w-[400px] lg:h-[400px] rounded-full xs:mx-4"
-          >
-            <img src="https://placeimg.com/192/192/people" />
-          </div>
+            class="photo 2xs:w-[300px] md:w-[400px] lg:w-[400px] lg:h-[400px] xs:mx-4"
+          ></div>
         </div>
         <div
           class="flex justify-center items-center m-8 text-justify flex-col text-gray-500"
@@ -112,17 +110,18 @@
             me conhecer e me cuidar cada vez mais 💜... <br />
           </p>
           <label
+            onclick="openModal()"
             for="my-modal"
             class="btn mt-6 bg-primary border-hidden hover:bg-[#701A75] text-secondary"
             >LEIA MAIS</label
           >
           <input type="checkbox" id="my-modal" class="modal-toggle" />
-          <label for="my-modal" class="modal cursor-pointer">
-            <label
-              class="modal-box h-[400px] overflow-hidden max-w-[100%] bg-[#fffcf6]"
-              for=""
+          <div class="modal">
+            <div
+              class="modal-box h-[400px] overflow-hidden max-w-[1100px] bg-[#fffcf6]"
             >
               <label
+                onclick="closeModal()"
                 for="my-modal"
                 class="btn btn-sm btn-circle absolute right-2 top-2 bg-primary border-hidden hover:bg-[#701A75] text-secondary"
                 >✕</label
@@ -130,7 +129,7 @@
               <h3 class="text-2xl text-center font-bold mb-4 text-primary">
                 Sobre Mim
               </h3>
-              <p class="py-4 overflow-auto h-[90%] text-gray-500">
+              <p class="p-4 overflow-auto h-[90%] text-gray-500 text-left">
                 Sou graduada em Ciências Biológicas e atuo como professora de
                 Ciências há 17 anos. Há 5 anos comecei minha trajetória como
                 terapeuta sistêmica e integrativa. 🌻 <br />
@@ -158,8 +157,8 @@
                 <br />
                 Gratidão estar aqui com vocês agora!🙏🏽
               </p>
-            </label>
-          </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -169,11 +168,12 @@
       </h1>
       <div class="flex justify-center">
         <div
-          class="card justify-center bg-base-100 image-full shadow-xl m-6 max-w-[1080px] max-h-[400px] overflow-hidden scroll-mt-20"
+          class="card justify-center bg-base-100 image-full shadow-xl m-6 max-w-[1080px] max-h-[400px] scroll-mt-20"
           id="terapia1"
         >
           <figure>
             <img
+              class="w-full h-full object-top"
               src="/constelacao_sistemica.jpg"
               alt="Imagem Constelação Sistêmica"
             />
@@ -201,8 +201,9 @@
               interpessoais, profissionais, de saúde, entre outros... <br />
               <br />
             </p>
-            <div class="card-actions absolute top-80 right-6">
+            <div class="flex justify-end">
               <label
+                onclick="openModal()"
                 for="my-modal-1"
                 class="btn bg-primary border-hidden hover:bg-[#701A75] text-secondary"
                 >LEIA MAIS</label
@@ -213,11 +214,15 @@
       </div>
       <div class="flex justify-center">
         <div
-          class="card justify-center bg-base-100 shadow-xl image-full m-6 max-w-[1080px] max-h-[400px] overflow-hidden scroll-mt-20"
+          class="card justify-center bg-base-100 shadow-xl image-full m-6 max-w-[1080px] max-h-[400px] scroll-mt-20"
           id="terapia2"
         >
           <figure>
-            <img src="/cura_pranica.jpg" alt="Imagem Cura Prânica" />
+            <img
+              class="w-full h-full object-top"
+              src="/cura_pranica.jpg"
+              alt="Imagem Cura Prânica"
+            />
           </figure>
           <div class="card-body">
             <h2 class="card-title justify-center text-3xl text-secondary">
@@ -241,8 +246,9 @@
               As sessões de cura prânica podem ser realizadas presencialmente ou
               online...
             </p>
-            <div class="card-actions absolute top-80 right-6">
+            <div class="flex justify-end">
               <label
+                onclick="openModal()"
                 for="my-modal-2"
                 class="btn bg-primary border-hidden hover:bg-[#701A75] text-secondary"
                 >LEIA MAIS</label
@@ -253,12 +259,12 @@
       </div>
     </div>
     <input type="checkbox" id="my-modal-1" class="modal-toggle" />
-    <label for="my-modal-1" class="modal cursor-pointer">
-      <label
-        class="modal-box h-[400px] overflow-hidden max-w-[100%] bg-[#fffcf6]"
-        for=""
+    <div class="modal">
+      <div
+        class="modal-box h-[400px] overflow-hidden max-w-[1100px] bg-[#fffcf6]"
       >
         <label
+          onclick="closeModal()"
           for="my-modal-1"
           class="btn btn-sm btn-circle absolute right-2 top-2 bg-primary border-hidden hover:bg-[#701A75] text-secondary"
           >✕</label
@@ -266,7 +272,7 @@
         <h3 class="text-2xl text-center font-bold text-primary mb-4">
           Constelação Sistêmica
         </h3>
-        <p class="py-4 overflow-auto h-[90%] text-gray-500">
+        <p class="p-4 overflow-auto h-[90%] text-gray-500 text-left">
           A Constelação Sistêmica é uma abordagem terapêutica desenvolvida pelo
           psicoterapeuta Bert Hellinger. A partir da junção de suas formações em
           Filosofia, Teologia, Pedagogia, e Psicanálise com suas vivências
@@ -290,21 +296,28 @@
           A constelação pode ser realizada individualmente ou em grupo, de forma
           presencial ou online 👨‍👩‍👦👩‍👩‍👧👨‍👨‍👧 <br />
           <br />
-          Quer entender um pouco mais sobre esse tema? Comente aqui sua pergunta
-          que terei prazer em responder 😄 <br />
+          Quer entender um pouco mais sobre esse tema? Comente
+          <a
+            class="text-primary font-bold underline"
+            href="https://www.instagram.com/raquelmsterapias/"
+            target="_blank"
+          >
+            aqui</a
+          >
+          sua pergunta que terei prazer em responder 😄 <br />
           <br />
           Sente que precisa desbloquear sua vida? Envie uma mensagem e agende a
           sua sessão 🌟
         </p>
-      </label>
-    </label>
+      </div>
+    </div>
     <input type="checkbox" id="my-modal-2" class="modal-toggle" />
-    <label for="my-modal-2" class="modal cursor-pointer">
-      <label
-        class="modal-box h-[400px] overflow-hidden max-w-[100%] bg-[#fffcf6]"
-        for=""
+    <div class="modal">
+      <div
+        class="modal-box h-[400px] overflow-hidden max-w-[1100px] bg-[#fffcf6]"
       >
         <label
+          onclick="closeModal()"
           for="my-modal-2"
           class="btn btn-sm btn-circle absolute right-2 top-2 bg-primary border-hidden hover:bg-[#701A75] text-secondary"
           >✕</label
@@ -312,7 +325,7 @@
         <h3 class="text-2xl text-center font-bold text-primary mb-4">
           Cura Prânica
         </h3>
-        <p class="py-4 overflow-auto h-[90%] text-gray-500">
+        <p class="p-4 overflow-auto h-[90%] text-gray-500 text-left">
           A Terapia Prânica é uma forma avançada de cura energética,
           sistematizada por Mestre Choa Kok Sui. A partir de muitos anos de
           pesquisas e testes de diversas técnicas de cura esotérica,
@@ -332,15 +345,22 @@
           Pode ser aplicada em crianças, adultos, plantas, outros animais e
           ambientes 👩‍🦰👧🧓🧑‍🐴🐶🌳🌵 <br />
           <br />
-          Deseja saber mais sobre a Terapia Prânica? Escreva aqui que
-          responderei com prazer💖 <br />
+          Deseja saber mais sobre a Terapia Prânica? Escreva
+          <a
+            class="text-primary font-bold underline"
+            href="https://www.instagram.com/raquelmsterapias/"
+            target="_blank"
+          >
+            aqui</a
+          >
+          que responderei com prazer💖 <br />
           <br />
           Sente algum desconforto e deseja ser auxiliado (a)? Envie uma mensagem
           e marque sua sessão🙌 <br />
           <br />
         </p>
-      </label>
-    </label>
+      </div>
+    </div>
   </body>
   <footer
     id="contato"
@@ -351,7 +371,11 @@
     </div>
     <div>
       <div class="flex justify-center space-x-2 text-secondary">
-        <a href="https://www.facebook.com/raquel.mendonca.129" role="button">
+        <a
+          href="https://www.facebook.com/raquel.mendonca.129"
+          role="button"
+          target="_blank"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 320 512"
@@ -363,7 +387,11 @@
             />
           </svg>
         </a>
-        <a href="https://www.instagram.com/raquelmsterapias/" role="button">
+        <a
+          href="https://www.instagram.com/raquelmsterapias/"
+          role="button"
+          target="_blank"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
@@ -378,4 +406,5 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </html>
